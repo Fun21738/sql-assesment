@@ -1,0 +1,68 @@
+CREATE database customers
+  GO
+
+/*CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);*/
+INSERT into [customers].[dbo].[Persons](personID,LastName,FirstName,Address,City) 
+  VALUES ('1','blue','burge','1234','turkey')
+  GO
+
+  INSERT into [customers].[dbo].[Persons](personID,LastName,FirstName,Address,City) 
+  VALUES ('2','john','green','134231','mexico')
+  GO
+
+  INSERT into [customers].[dbo].[Persons](personID,LastName,FirstName,Address,City) 
+  VALUES ('3','Eric','maina','1894','miami')
+  GO
+
+  INSERT into [customers].[dbo].[Persons](personID,LastName,FirstName,Address,City) 
+  VALUES ('4','mike','mbiki','4564','la')
+  GO
+
+  INSERT into [customers].[dbo].[Persons](personID,LastName,FirstName,Address,City) 
+  VALUES ('5','sam','wafula','189894','carlifonia')
+GO
+
+  select *   FROM [customers].[dbo].[Persons];
+  GO
+
+
+
+
+
+
+
+   
+create table salesproduct(
+ProductsID int,
+employeeId int,
+Product varchar(255),
+Sales int,
+);
+GO
+INSERT into salesproduct(ProductsID,employeeId,Product,Sales) 
+  VALUES (1,1,'books',56)
+
+  INSERT into salesproduct(ProductsID,employeeId,Product,Sales) 
+  VALUES (2,2,'pen',11)
+
+  INSERT into salesproduct(ProductsID,employeeId,Product,Sales) 
+  VALUES (3,3,'textbooks',8)
+
+  INSERT into salesproduct(ProductsID,employeeId,Product,Sales) 
+  VALUES (4,4,'cryons',0)
+
+  INSERT into salesproduct(ProductsID,employeeId,Product,Sales) 
+  VALUES (5,5,'markers',0)
+  GO
+  
+  select *from salesproduct
+  GO
+
+
+  select [customers].[dbo].[Persons].FirstName ,salesproduct.Sales from [customers].[dbo].[Persons] JOIN salesproduct on [customers].[dbo].[Persons].PersonID  = employeeId WHERE sales=0
